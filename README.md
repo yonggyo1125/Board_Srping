@@ -19,8 +19,6 @@
 
 - [master 브랜치](https://github.com/yonggyo1125/Board_Srping/tree/master)
 
-[master 브랜치](https://github.com/yonggyo1125/Board_Srping/tree/master)
-
 ![image3](https://raw.githubusercontent.com/yonggyo1125/Board_Srping/master/images/image3.png)
 
 ![image4](https://raw.githubusercontent.com/yonggyo1125/Board_Srping/master/images/image4.png)
