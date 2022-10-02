@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<header	th:fragment="main">
+	<div class='top_menu'>
+		<div class='layout_width'>
+				<th:block th:if="${session.member == null}">
+			 		<a th:href="@{/member/join}" th:text="#{member.join}"></a>
+			 		<a th:href="@{/member/login}" th:text="#{member.login}"></a>
+		 		</th:block>
+		 		<th:block th:if="${session.member != null}">
+		 			<span>
+		 			<th:block th:text="${session.member.memNm}"></th:block>
+		 			(<th:block th:text="${session.member.memId}"></th:block>)님 로그인...
+		 			</span>
+			 		<a th:href="@{/mypage}" th:text="#{mypage}"></a>
+			 		<a th:href="@{/member/logout}" th:text="#{member.logout}"></a>
+		 		</th:block>		
+		</div>
+	</div>
+	<h1>메인 헤더!</h1>
+</header>
+</html>

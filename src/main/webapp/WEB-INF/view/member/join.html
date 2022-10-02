@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/main}">
+	<main layout:fragment="content">
+		<div class='content_box layout_width'>
+			<h1 th:text="#{member.join}"></h1>
+			<form class='form_box' method="post" th:action="@{/member/join}" autocomplete="off" th:object="${joinRequest}">
+				<div th:each="err : ${#fields.globalErrors()}" th:text="${err}" class='error'></div>
+				<dl>
+					<dt th:text="#{member.memId}"></dt>
+					<dd>
+						<input type="text" name="memId" th:field="*{memId}">
+						<div th:each="err : ${#fields.errors('memId')}" th:text="${err}" class='error'></div>
+					</dd>
+				</dl>
+				<dl>
+					<dt th:text="#{member.memPw}"></dt>
+					<dd>
+						<input type="password" name="memPw" th:field="*{memPw}">
+						<div th:each="err : ${#fields.errors('memPw')}" th:text="${err}" class='error'></div>
+					</dd>
+				</dl>
+				<dl>
+					<dt th:text="#{member.memPwRe}"></dt>
+					<dd>
+						<input type="password" name="memPwRe" th:field="*{memPwRe}">
+						<div th:each="err : ${#fields.errors('memPwRe')}" th:text="${err}" class='error'></div>
+					</dd>
+				</dl>
+				<dl>
+					<dt th:text="#{member.memNm}"></dt>
+					<dd>
+						<input type="text" name="memNm" th:field="*{memNm}">
+						<div th:each="err : ${#fields.errors('memNm')}" th:text="${err}" class='error'></div>
+					</dd>
+				</dl>
+				<dl>
+					<dt th:text="#{member.email}"></dt>
+					<dd>
+						<input type="text" name="email" th:field="*{email}">
+						<div th:each="err : ${#fields.errors('email')}" th:text="${err}" class="error"></div>
+					</dd>
+				</dl>
+				<dl>
+					<dt th:text="#{member.mobile}"></dt>
+					<dd>
+						<input type="text" name="mobile" th:field="*{mobile}">
+						<div th:each="err : ${#fields.errors('mobile')}" th:text="${err}" class="error"></div>
+					</dd>
+				</dl>
+				
+				<dl>
+					<dt th:text="#{member.agreeTerms}"></dt>
+					<dd>
+						<input type="checkbox" name="agreeTerms" th:field="*{agreeTerms}" id="agreeTerms">
+						<label for="agreeTerms" th:text="#{member.agreeTermsYes}"></label>
+						
+						<div th:each="err : ${#fields.errors('agreeTerms')}" th:text="${err}" class="error"></div>
+					</dd>
+				</dl>
+				<div class='btns'>
+					<button type="submit" th:text="#{member.join}"></button>
+					<button type="reset" th:text="#{member.reset}"></button>
+				</div>
+			</form>
+		</div>
+		<!--// content_box  -->
+	</main>
+</html>

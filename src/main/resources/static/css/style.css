@@ -1,0 +1,53 @@
+* { box-sizing: border-box; color: #222; }
+html { font-size: 13px; }
+body { margin: 0; }
+a { text-decoration: none; }
+ul, ol { list-style: none; margin: 0; }
+dl, dt, dd { margin: 0; }
+dl { display: flex; padding: 5px 0; }
+dt { width: 100px; }
+dd { width: calc(100% - 100px); }
+
+input[type='text'],
+input[type='password'],
+inpuit[type='number'],
+input[type='email'] { width: 100%; height: 35px; border: 1px solid #d5d5d5; border-radius: 5px; }
+
+input[type='checkbox'] { display: none; }
+input[type='checkbox']~label { display: inline-block; min-height: 20px; padding: 0 10px 0 25px; background:url('../images/common/chk.png') no-repeat left center; cursor: pointer; }
+input[type='checkbox']:checked~label { background:url('../images/common/chk_on.png') no-repeat left center; }
+
+.dn { display: none !important; }
+
+.layout_width { width: 1200px !important; margin: 0 auto;  padding: 0 10px;  }
+
+/** 에러 텍스트 */
+.error { color: red; box-shadow: 2px 2px 5px #d5d5d5; padding: 10px; margin: 5px 0; font-size: 12px; }
+
+/** 공통 버튼 */
+.btns { text-align: center; padding: 20px 0; }
+.btns button { background: #222; color: #fff; border: 1px solid #222; height: 45px; padding: 0 25px; min-width: 200px; cursor: pointer; border-radius: 5px; font-size: 15px; }
+.btns button:last-of-type { background: #fff; color: #222; }
+
+/** 헤더 영역 */
+header { padding-bottom: 50px; ; text-align: center; }
+header .top_menu  { text-align: right; border-bottom: 1px solid #d5d5d5; height: 40px; line-height: 40px;  margin-bottom: 50px; }
+header .top_menu a { margin-left: 10px; }
+header .top_menu a:hover { text-decoration: underline; }
+
+/** 상단 메인 메뉴 */
+nav { background: #222; color: #fff; }
+nav > .inner { height: 50px; display: flex; }
+nav > .inner a { color: #fff; line-height: 50px; padding: 0 25px; font-size: 17px; } 
+
+/** 푸터 영역 */
+footer { border-top: 1px solid #222; margin-top: 150px; padding: 50px 0; text-align: center; background: #f8f8f8; }
+
+/** 본문 영역 */
+.form_box { margin: 0 auto; max-width: 700px; min-width: 600px; border: 10px solid #d5d5d5; border-radius: 7px; padding: 15px; }
+.content_box h1 { font-size: 15px; font-weight: bold; box-shadow: 2px 2px 5px #d5d5d5; padding: 10px; margin-bottom: 25px; }
+
+
+
+
+

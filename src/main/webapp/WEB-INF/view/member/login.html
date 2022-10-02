@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/main}">
+	
+<main layout:fragment="content">
+	<div class='content_box layout_width'>
+		<h1 th:text="#{member.login}"></h1>
+		<form class="form_box" method="post" th:action="@{/member/login}" autocomplete="off" th:object="${loginRequest}">
+			<div th:each="err : ${#fields.globalErrors()}" th:text="${err}" class="error"></div>
+			<dl>
+				<dt th:text="#{member.memId}"></dt>
+				<dd>
+					<input type="text" name="memId" th:field="*{memId}">
+					<div th:each="err : ${#fields.errors('memId')}" th:text="${err}" class="error"></div>
+				</dd>
+			</dl>
+			<dl>
+				<dt th:text="#{member.memPw}"></dt>
+				<dd>
+					<input type="password" name="memPw" th:field="*{memPw}">
+					<div th:each="err : ${#fields.errors('memPw')}" th:text="${err}" class="error"></div>
+				</dd>
+			</dl>
+			<dl>
+				<dt></dt>
+				<dd>
+					<input type="checkbox" name="saveId" th:field="*{saveId}" id="saveId">
+					<label th:text="#{member.saveId}" for="saveId"></label>
+				</dd>
+			</dl>
+			<div class='btns'>
+				<button type="submit" th:text="#{member.login}"></button>
+			</div>
+		</form>
+	</div>
+</main>	
+</html>

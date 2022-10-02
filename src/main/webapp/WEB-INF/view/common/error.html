@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<title>에러!</title>
+	</head>
+	<body>
+		<h1 th:text="${statusCode}"></h1>
+		<h2 >
+			<span th:text="${method}"></span>
+			<span th:text="${requestURL}"></span>
+		</h2>
+		<h3 th:text="${message}"></h3>
+	</body>
+</html>
