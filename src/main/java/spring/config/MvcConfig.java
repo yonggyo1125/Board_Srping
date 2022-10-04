@@ -19,6 +19,7 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -30,6 +31,7 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 
+import commons.auth.AdminCheck;
 import commons.errors.CommonErrorHandler;
 import commons.errors.CommonRestErrorHandler;
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
@@ -128,5 +130,16 @@ public class MvcConfig implements WebMvcConfigurer {
 	@Bean
 	public CommonRestErrorHandler commonRestErrorHandler() {
 		return new CommonRestErrorHandler();
+	}
+	
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(adminCheck())
+				.addPathPatterns("/admin/**");	
+	}
+	
+	@Bean
+	public AdminCheck adminCheck() {
+		return new AdminCheck();
 	}
 }
