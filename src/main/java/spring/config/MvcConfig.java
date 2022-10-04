@@ -41,6 +41,7 @@ import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 @Import(DBConfig.class)
 public class MvcConfig implements WebMvcConfigurer {
 	
+	
 	@Value("${environment}")
 	private String environment;
 	
@@ -135,7 +136,8 @@ public class MvcConfig implements WebMvcConfigurer {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(adminCheck())
-				.addPathPatterns("/admin/**");	
+				.addPathPatterns("/admin/**");
+				
 	}
 	
 	@Bean

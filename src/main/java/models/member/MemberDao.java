@@ -1,5 +1,7 @@
 package models.member;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
@@ -43,5 +45,19 @@ public class MemberDao {
 			return null;
 		}
 	}
-	
+
+	public void testMethod() {
+		List<String> memNms = em.createQuery("SELECT m.memNm FROM Member m", String.class)
+													.getResultList();
+		
+		System.out.println(memNms);
+		
+		Long total = em.createQuery("SELECT COUNT(m) FROM Member m", Long.class)
+											.getSingleResult();
+		
+		System.out.println("전체 회원 수 : " + total);
+	}
 }
+
+
+

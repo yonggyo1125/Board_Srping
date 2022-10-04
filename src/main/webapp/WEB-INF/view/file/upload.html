@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="~{layouts/main}">
+		
+		<main layout:fragment="content">
+			<div id="popup_file_upload">
+				<div id="drop_box">
+					<div>파일을 드래그 해서 올려주세요</div>
+				</div>
+				
+				<dl>
+					<dt>파일</dt>
+					<dd>
+						<input type="file" id="file" />
+					</dd>
+				</dl>
+				
+				<ul id="uploaded_files"></ul>
+			</div>
+			<script type="text/html" id="fileListTpl">
+				<li>
+					<a href="../file/download/<%=id%>"><%=fileName%></a>
+					<span class='remove' data-id="<%=id%>">[x]</span>
+				</li>
+			</script>
+		</main>
+</html>

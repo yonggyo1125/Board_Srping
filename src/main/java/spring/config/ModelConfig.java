@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @Import(ServiceConfig.class)
-@ComponentScan({"models.member"})
+@ComponentScan({"models.member", "models.file"})
 public class ModelConfig {
 
 }
