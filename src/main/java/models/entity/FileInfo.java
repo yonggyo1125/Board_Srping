@@ -26,6 +26,9 @@ public class FileInfo extends BaseEntity {
 	@Column(length=60, nullable=false)
 	private String contentType; // 파일 형식
 	
+	@Column(length=15, nullable=false)
+	private String extension; // 파일 확장자 
+	
 	private boolean done; // 그룹 작업 완료 여부
 	
 	@ManyToOne(fetch=FetchType.LAZY)
@@ -62,6 +65,14 @@ public class FileInfo extends BaseEntity {
 
 	public void setContentType(String contentType) {
 		this.contentType = contentType;
+	}
+
+	public String getExtension() {
+		return extension;
+	}
+
+	public void setExtension(String extension) {
+		this.extension = extension;
 	}
 
 	public boolean isDone() {

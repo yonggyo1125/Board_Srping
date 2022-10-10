@@ -9,8 +9,11 @@ public class FileInfoDto extends BaseDto {
 	private String gid; // 그룹 ID
 	private String fileName; // 파일 원본 이름
 	private String contentType; // 파일 종류
+	private String extension; // 파일 확장자
 	private boolean done; // 그룹 작업 완료 여부
 	private MemberDto member; // 파일 소유 회원
+	private String fileUrl;
+	private String filePath;
 	
 	public Long getId() {
 		return id;
@@ -44,6 +47,14 @@ public class FileInfoDto extends BaseDto {
 		this.contentType = contentType;
 	}
 	
+	public String getExtension() {
+		return extension;
+	}
+
+	public void setExtension(String extension) {
+		this.extension = extension;
+	}
+
 	public boolean isDone() {
 		return done;
 	}
@@ -60,10 +71,27 @@ public class FileInfoDto extends BaseDto {
 		this.member = member;
 	}
 
+	public String getFileUrl() {
+		return fileUrl;
+	}
+	
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
+	}
+
+	public String getFilePath() {
+		return filePath;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
+
 	@Override
 	public String toString() {
 		return "FileInfoDto [id=" + id + ", gid=" + gid + ", fileName=" + fileName + ", contentType=" + contentType
-				+ ", done=" + done + ", member=" + member + ", regDt=" + regDt + ", modDt=" + modDt + "]";
+				+ ", extension=" + extension + ", done=" + done + ", member=" + member + ", fileUrl=" + fileUrl
+				+ ", filePath=" + filePath + ", regDt=" + regDt + ", modDt=" + modDt + "]";
 	}
 	
 	
@@ -77,6 +105,7 @@ public class FileInfoDto extends BaseDto {
 		entity.setGid(fileInfo.getGid());
 		entity.setFileName(fileInfo.getFileName());
 		entity.setContentType(fileInfo.getContentType());
+		entity.setExtension(fileInfo.getExtension());
 		entity.setDone(fileInfo.isDone());
 		entity.setMember(MemberDto.toEntity(fileInfo.getMember()));
 		
@@ -93,6 +122,7 @@ public class FileInfoDto extends BaseDto {
 		fileInfo.setGid(entity.getGid());
 		fileInfo.setFileName(entity.getFileName());
 		fileInfo.setContentType(entity.getContentType());
+		fileInfo.setExtension(entity.getExtension());
 		fileInfo.setDone(entity.isDone());
 		fileInfo.setMember(MemberDto.toDto(entity.getMember()));
 		fileInfo.setRegDt(entity.getRegDt());

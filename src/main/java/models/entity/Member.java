@@ -27,7 +27,12 @@ public class Member extends BaseEntity {
 	@Enumerated(EnumType.STRING)
 	@Column(length=10)
 	private MemberType memType = MemberType.MEMBER;
-
+	
+	/**
+	@OneToMany(mappedBy="member")
+	private List<FileInfo> fileInfos = new ArrayList<>();
+	*/
+	
 	public Long getMemNo() {
 		return memNo;
 	}

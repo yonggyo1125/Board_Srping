@@ -1,5 +1,6 @@
 package spring.config;
 
+import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -45,6 +46,9 @@ public class MvcConfig implements WebMvcConfigurer {
 	@Value("${environment}")
 	private String environment;
 	
+	@Value("${fileUploadPath}")
+	private String fileUploadPath;
+	
 	@Autowired
 	ApplicationContext applicationContext;
 	
@@ -65,8 +69,16 @@ public class MvcConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		
+		
+		if (fileUploadPath != null) {
+			registry.addResourceHandler("/uploads/**")
+						.addResourceLocations("file:///" + fileUploadPath + File.separator);
+		}
+
 		registry.addResourceHandler("/**")
-				.addResourceLocations("classpath:/static/");
+			.addResourceLocations("classpath:/static/");
+	
 	}
 
 	@Override

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" 
 		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-		layout:decorate="~{layouts/main}">
+		layout:decorate="~{layouts/popup}">
 		
 		<main layout:fragment="content">
+			<input type="hidden" name="imageOnly" th:value="${imageOnly}">
+			<input type="hidden" name="gid" th:value="${gid}">
+			
 			<div id="popup_file_upload">
 				<div id="drop_box">
 					<div>파일을 드래그 해서 올려주세요</div>
@@ -12,7 +15,7 @@
 				<dl>
 					<dt>파일</dt>
 					<dd>
-						<input type="file" id="file" />
+						<input type="file" id="file" multiple />
 					</dd>
 				</dl>
 				

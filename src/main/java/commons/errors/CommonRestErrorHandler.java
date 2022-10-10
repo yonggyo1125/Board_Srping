@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import commons.rest.JsonMessage;
 
-@RestControllerAdvice("controllers.rest")
+@RestControllerAdvice({"controllers.rest", "controllers.file"})
 public class CommonRestErrorHandler {
 	
 	@ExceptionHandler(RuntimeException.class)

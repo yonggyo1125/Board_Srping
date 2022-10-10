@@ -4,21 +4,16 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title th:unless="${#strings.isEmpty(title)}" th:text="${title}"></title>
-		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/popup.css}" />
 		<link rel="stylesheet" type="text/css" th:each="css : ${addCss}" th:href="@{/css/{add}.css(add=${css})}" />
 		<th:block layout:fragment="addCss"></th:block>
 		
-		<script th:src="@{/js/layer.js}"></script>
 		<script th:src="@{/js/common.js}"></script>
 		<script th:each="js : ${addJs}" th:src="@{/js/{add}.js(add=${js})}"></script>
 		<th:block layout:fragment="addJs"></th:block>
 	</head>
-	<body>
-		<header th:replace="outline/header/main::main"></header>
-		<nav th:replace="outline/menu/main::menu"></nav>
-		
+	<body>		
 		<main layout:fragment="content"></main>
-		<footer th:replace="outline/footer/main::main"></footer>
 		<iframe name="ifrmProcess" class='dn'></iframe>
 	</body>
 </html>

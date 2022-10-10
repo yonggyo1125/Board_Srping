@@ -1,0 +1,39 @@
+* { box-sizing: border-box; color: #222; }
+html { font-size: 13px; }
+body { margin: 0; }
+a { text-decoration: none; }
+ul, ol { list-style: none; margin: 0; }
+dl, dt, dd { margin: 0; }
+dl { display: flex; padding: 5px 0; }
+dt { width: 100px; }
+dd { width: calc(100% - 100px); }
+
+input[type='text'],
+input[type='password'],
+inpuit[type='number'],
+input[type='email'] { width: 100%; height: 35px; border: 1px solid #d5d5d5; border-radius: 5px; }
+
+input[type='checkbox'] { display: none; }
+input[type='checkbox']~label { display: inline-block; min-height: 20px; padding: 0 10px 0 25px; background:url('../images/common/chk.png') no-repeat left center; cursor: pointer; }
+input[type='checkbox']:checked~label { background:url('../images/common/chk_on.png') no-repeat left center; }
+
+.dn { display: none !important; }
+
+/** file/upload.html */
+
+#popup_file_upload #drop_box { border: 8px dashed #d5d5d5; display: flex; align-items: center; text-align: center; width: calc(100% - 40px); margin: 30px auto; cursor: pointer; font-size: 0.9rem; height: 200px; }
+#popup_file_upload #drop_box > div { text-align: center; width: 100%; }
+
+#popup_file_upload dl {display: flex; margin: 0 20px 15px; }
+#popup_file_upload dt { width: 60px; }
+#popup_file_upload dd { width: calc(100% - 60px); }
+
+#popup_file_upload li { box-shadow: 2px 2px 5px #d5d5d5; border-radius: 5px; display: flex; justify-content: space-between; margin: 0 20px 5px; padding: 8px 10px; }
+#popup_file_upload li a:hover { text-decoration: underline; }
+
+
+
+
+
+
+
